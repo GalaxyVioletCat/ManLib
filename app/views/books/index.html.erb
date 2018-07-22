@@ -15,9 +15,10 @@
 
   <tbody>
     <% @books.each do |book| %>
+
       <tr>
         <td><%= book.title %></td>
-        <td><%= book.categoryes %></td>
+        <td><%= book.categories %></td>
         <td><%= book.autors %></td>
         <td><%= book.img_url %></td>
         <td><%= link_to 'Show', book %></td>

@@ -16,14 +16,11 @@
     <%= form.text_field :title, id: :book_title %>
   </div>
 
-  <div class="field">
-    <%= form.label :categoryes %>
-    <%= form.text_field :categoryes, id: :book_categoryes %>
-  </div>
+
 
   <div class="field">
     <%= form.label :autors %>
-    <%= form.text_field :autors, id: :book_autors %>
+    <%= form.select :autors, Author.all.collect {|x| [x.name]},{:include_blank => 'Select One'} , { :multiple => true} %>
   </div>
 
   <div class="field">

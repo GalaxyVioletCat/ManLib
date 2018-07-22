@@ -24,7 +24,7 @@ class AuthorsController < ApplicationController
   # POST /authors
   # POST /authors.json
   def create
-    @author = Author.new(author_params)
+    @author = Author.new
 
     respond_to do |format|
       if @author.save
@@ -54,7 +54,7 @@ class AuthorsController < ApplicationController
   # DELETE /authors/1
   # DELETE /authors/1.json
   def destroy
-    @author.destroy
+    @author.delete
     respond_to do |format|
       format.html { redirect_to authors_url, notice: 'Author was successfully destroyed.' }
       format.json { head :no_content }

@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :category_name %>
+    <%= form.text_field :name %>
   </div>
 
   <div class="field">
     <%= form.label :books %>
-    <%= form.text_field :books, id: :category_books %>
+    <%= form.select :books, Book.all.collect {|x| [x.title]},{:include_blank => 'Please select'}, { :multiple => true} %>
   </div>
 
   <div class="actions">
