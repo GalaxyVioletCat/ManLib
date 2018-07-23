@@ -2,12 +2,12 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @category.name %>
+  <%= @category.catename %>
 </p>
 
 <p>
   <strong>Books:</strong>
-  <%= @category.books %>
+  <%= @category.books.title %>
 </p>
 
 <%= link_to 'Edit', edit_category_path(@category) %> |

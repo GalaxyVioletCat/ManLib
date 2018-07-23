@@ -5,19 +5,14 @@
   <%= @book.title %>
 </p>
 
-<p>
-  <strong>Categoryes:</strong>
-  <%= @book.categoryes %>
-</p>
 
 <p>
   <strong>Autors:</strong>
-  <%= @book.autors %>
+  <%= @book.authors %>
 </p>
 
-<p>
-  <strong>Img url:</strong>
-  <%= @book.img_url %>
+<p style="img">
+  <%= image_tag(@book.img_url) %>
 </p>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |

@@ -10,8 +10,12 @@ class AuthorsController < ApplicationController
   # GET /authors/1
   # GET /authors/1.json
   def show
-  end
 
+  end
+def add_author
+  Author.select(author_id)
+
+end
   # GET /authors/new
   def new
     @author = Author.new
@@ -33,6 +37,12 @@ class AuthorsController < ApplicationController
       else
         format.html { render :new }
         format.json { render json: @author.errors, status: :unprocessable_entity }
+      end
+    end
+
+    Book.map do book
+      if book.author == @author.writer then
+        @author.books = @author.books + ", " + book.title
       end
     end
   end
@@ -69,6 +79,6 @@ class AuthorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def author_params
-      params.require(:author).permit(:name, :books)
+      params.require(:author).permit(:writer, :books)
     end
 end

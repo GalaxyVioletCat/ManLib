@@ -19,8 +19,9 @@
 
 
   <div class="field">
-    <%= form.label :autors %>
-    <%= form.select :autors, Author.all.collect {|x| [x.name]},{:include_blank => 'Select One'} , { :multiple => true} %>
+    <%= form.label :authors %>
+  
+    <%= form.select :authors, Author.all.collect {|x| [x.writer]},{:include_blank => 'Select One'} , { :multiple => true} %>
   </div>
 
   <div class="field">

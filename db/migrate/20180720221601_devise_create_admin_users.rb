@@ -43,4 +43,5 @@ class DeviseCreateAdminUsers < ActiveRecord::Migration[5.1]
     # add_index :admin_users, :confirmation_token,   unique: true
     # add_index :admin_users, :unlock_token,         unique: true
   end
+
 end
